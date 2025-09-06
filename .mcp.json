@@ -1,0 +1,45 @@
+{
+  "mcpServers": {
+    "cryptopanic-mcp-server": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/home/cys/crypto_claude/cryptopanic-mcp",
+        "run",
+        "main.py"
+      ],
+      "env": {
+        "CRYPTOPANIC_API_PLAN": "developer",
+        "CRYPTOPANIC_API_KEY": "fced672c8948de80ac788686824e09d605f51911"
+      }
+    },
+    "ccxt-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@lazydino/ccxt-mcp",
+        "--config",
+        "/home/cys/crypto_claude/cxt-accounts.json"
+      ]
+    },
+    "tavily-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "tavily-mcp@0.1.4"
+      ],
+      "env": {
+        "TAVILY_API_KEY": "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"
+      }
+    },
+    "fetch": {
+      "type": "stdio",
+      "args": [
+        "mcp-server-fetch"
+      ],
+      "command": "uvx"
+    }        
+  }
+}
